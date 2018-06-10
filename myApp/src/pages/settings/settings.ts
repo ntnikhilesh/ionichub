@@ -25,8 +25,38 @@ export class SettingsPage {
  })
   }
 
+
+
+  ionViewCanEnter() {
+    console.log('ionViewCanEnter SettingsPage');
+  }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
+  }
+
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter SettingsPage');
+  }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter SettingsPage');
+  }
+
+  ionViewCanLeave() {
+    console.log('ionViewCanLeave SettingsPage');
+  }
+
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave SettingsPage');
+  }
+  
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave SettingsPage');
+  }
+
+  ionViewWillUnload() {
+    console.log('ionViewWillUnload SettingsPage');
   }
 
   saveForm(){
@@ -40,6 +70,10 @@ export class SettingsPage {
 
     this.navCtrl.push(HomePage);
   }
+
+
+
+
 
 
 

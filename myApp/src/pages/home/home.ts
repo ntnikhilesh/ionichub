@@ -16,7 +16,20 @@ export class HomePage {
 
   }
 
+
+
+ 
+
+  ionViewCanEnter() {
+    console.log('ionViewCanEnter HomePage');
+  }
+  
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+  }
+  
   ionViewWillEnter(){
+    console.log('ionViewWillEnter HomePage');
     this.storage.get('location').then((val)=>{
       console.log('locatin from storage',val)
       if(val != null){
@@ -33,5 +46,32 @@ export class HomePage {
     })
    
   }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter HomePage');
+  
+}
+
+
+  ionViewCanLeave() {
+    console.log('ionViewCanLeave HomePage');
+  }
+
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave HomePage');
+  }
+  
+  ionViewDidLeave() {
+    console.log('ionViewDidEnter HomePage');
+  }
+
+
+  ionViewWillUnload() {
+    console.log('ionViewWillUnload HomePage');
+  }
+
+
+
+
 
 }
