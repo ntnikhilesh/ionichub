@@ -1,17 +1,41 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>iWeather</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="home">
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-grid *ngIf='weather'>
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2 class="loaction">{{weather.current_observation.display_location.full}}</h2>
+        <div class="icon">
+          <img src='{{weather.current_observation.icon_url}}'>
+          <h3 class="desc">{{weather.current_observation.weather}}</h3>
+          <h3 class="temp">{{weather.current_observation.temp_f}}&deg;</h3>
+        </div>
+      </ion-col>
+    </ion-row> 
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <ion-item>
+            <strong>Temp : </strong>{{weather.current_observation.temperature_string}}
+          </ion-item>
+          <ion-item>
+            <strong>Relative Humidity : </strong>{{weather.current_observation.relative_humidity}}
+          </ion-item>
+          <ion-item>
+            <strong>Dewpont : </strong>{{weather.current_observation.dewpoint_string}}
+          </ion-item>
+          <ion-item>
+            <strong>weather : </strong>{{weather.current_observation.weather}}
+          </ion-item>
+          <ion-item>
+            <strong>Wind (kph) : </strong>{{weather.current_observation.wind_kph}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
