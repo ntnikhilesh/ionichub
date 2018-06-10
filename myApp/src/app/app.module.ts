@@ -14,6 +14,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WeatherProvider } from '../providers/weather/weather';
 import { HttpClientModule } from '@angular/common/http';
+import {IonicStorageModule} from '@ionic/storage';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    FormsModule,
+    ReactiveFormsModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

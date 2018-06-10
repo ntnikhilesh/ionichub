@@ -8,11 +8,11 @@
   <ion-grid *ngIf='weather'>
     <ion-row>
       <ion-col width-50 offset-25>
-        <h2 class="loaction">{{weather.current_observation.display_location.full}}</h2>
+        <h2 class="loaction">{{weather.location.name}}</h2>
         <div class="icon">
-          <img src='{{weather.current_observation.icon_url}}'>
-          <h3 class="desc">{{weather.current_observation.weather}}</h3>
-          <h3 class="temp">{{weather.current_observation.temp_f}}&deg;</h3>
+          <img src='{{weather.current.condition.icon}}'>
+          <h3 class="desc">{{weather.location.country}}</h3>
+          <h3 class="temp">{{weather.current.temp_c}}&deg;</h3>
         </div>
       </ion-col>
     </ion-row> 
@@ -20,19 +20,16 @@
       <ion-col width-100>
         <ion-list>
           <ion-item>
-            <strong>Temp : </strong>{{weather.current_observation.temperature_string}}
+            <strong>Temp (C): </strong>{{weather.current.temp_c}}
           </ion-item>
           <ion-item>
-            <strong>Relative Humidity : </strong>{{weather.current_observation.relative_humidity}}
+              <strong>Temp (F): </strong>{{weather.current.temp_f}}
+            </ion-item>
+          <ion-item>
+            <strong>Humidity : </strong>{{weather.current.humidity}}
           </ion-item>
           <ion-item>
-            <strong>Dewpont : </strong>{{weather.current_observation.dewpoint_string}}
-          </ion-item>
-          <ion-item>
-            <strong>weather : </strong>{{weather.current_observation.weather}}
-          </ion-item>
-          <ion-item>
-            <strong>Wind (kph) : </strong>{{weather.current_observation.wind_kph}}
+            <strong>Wind (kph) : </strong>{{weather.current.wind_mph}}
           </ion-item>
         </ion-list>
       </ion-col>

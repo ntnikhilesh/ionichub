@@ -18,8 +18,8 @@ export class WeatherProvider {
     
   }
 
-  getWeather(){
-   return this.http.get('http://api.wunderground.com/api/0def10027afaebb7/conditions/q/CA/San_Francisco.json')
+  getWeather(city){
+   return this.http.get('https://api.apixu.com/v1/current.json?key=4e5599d1e315484eb7984938181006&q='+city+'')
   }
 
 }
